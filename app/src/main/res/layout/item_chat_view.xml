@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:id="@+id/id_container_receiver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:paddingTop="5dp"
-        android:background="@color/colorAccent">
+        android:layout_alignParentLeft="true"
+        android:background="@color/colorAccent"
+        android:paddingTop="5dp">
 
         <TextView
             android:id="@+id/id_receive"
@@ -18,7 +17,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="5dp"
-            android:layout_gravity="left"
             android:text="this is msg from others"
             android:textColor="@android:color/white"
             android:textSize="15sp" />
@@ -29,9 +27,9 @@
         android:id="@+id/id_container_send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:paddingTop="5dp"
-        android:background="@color/colorPrimaryDark">
+        android:layout_alignParentRight="true"
+        android:background="@color/colorPrimaryDark"
+        android:paddingTop="5dp">
 
         <TextView
             android:id="@+id/id_send"
@@ -39,10 +37,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="5dp"
-            android:layout_gravity="right"
             android:text="this is msg to others"
             android:textColor="@android:color/white"
             android:textSize="15sp" />
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

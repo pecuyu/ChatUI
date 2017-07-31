@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -35,6 +36,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
             sContainer = (LinearLayout) itemView.findViewById(R.id.id_container_send);
             msgReceive = (TextView) itemView.findViewById(R.id.id_receive);
             msgSend = (TextView) itemView.findViewById(R.id.id_send);
+
         }
     }
 
@@ -46,16 +48,26 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        Msg msg = msgs.get(position);
-        if (msg.getMsgType() == Msg.MSG_TYPE_RECEIVE) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
+        final Msg msg = msgs.get(position);
+        if (msg.getMsgType() == Msg.MSG_TYPE_RECEIVE) {   // 判断消息类型
             holder.sContainer.setVisibility(View.GONE);  // 隐藏
             holder.msgReceive.setText(msg.getMsg());
-
+            holder.msgReceive.setOnClickListener(new View.OnClickListener() { // 添加点击事件
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(mContex,"msgReceive mag:"+msg.getMsg(),Toast.LENGTH_SHORT).show();
+                }
+            });
         } else if (msg.getMsgType() == Msg.MSG_TYPE_SEND) {
             holder.rContainer.setVisibility(View.GONE);
             holder.msgSend.setText(msg.getMsg());
-
+            holder.msgSend.setOnClickListener(new View.OnClickListener() { // 添加点击事件
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(mContex,"msgSend mag:"+msg.getMsg(),Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 

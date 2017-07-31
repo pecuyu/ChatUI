@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private List<Msg> initDatas() {
         List<Msg> msgs = new ArrayList<>();
         for (int i=0;i<20;i++) {
-            Msg msg = new Msg(i, i % 2, "this is msg " + (i % 2 == 0 ? "receive" : "send"));
+            Msg msg = new Msg(i, i % 2, "this is msg " + (i % 2 == 0 ? "receive" : "send")+i);
             msgs.add(msg);
         }
         return msgs;
