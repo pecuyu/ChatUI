@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/id_container_receiver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:paddingTop="5dp"
+        android:background="@color/colorAccent">
+
+        <TextView
+            android:id="@+id/id_receive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:layout_gravity="left"
+            android:text="this is msg from others"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/id_container_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:paddingTop="5dp"
+        android:background="@color/colorPrimaryDark">
+
+        <TextView
+            android:id="@+id/id_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:layout_gravity="right"
+            android:text="this is msg to others"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>
